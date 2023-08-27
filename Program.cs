@@ -13,7 +13,7 @@ Console.WriteLine(shortenedPost);
 // LINQ
 var books = new BookRepository().GetBooks();
 
-//// LINQ Query Operators
+// LINQ Query Operators
 //var cheaperBooks =
 //    from b in books
 //    where b.Price < 10
@@ -34,24 +34,39 @@ foreach (var book in cheaperBooks)
 }
 
 // other useful extension methods
-books.Where(); // returns a list of matches
-books.Single();
-books.SingleOrDefault(); // return a single match or null
+//books.Where(); // returns a list of matches
+//books.Single();
+//books.SingleOrDefault(); // return a single match or null
 
-books.First();
-books.FirstOrDefault();
-books.Last();
-books.LastOrDefault();
+//books.First();
+//books.FirstOrDefault();
+//books.Last();
+//books.LastOrDefault();
 
-// aggregate functions
-books.Min();
-books.Max();
-books.Count();
-books.Sum(b => b.Price);
-books.Average(b => b.Price);
+//// aggregate functions
+//books.Min();
+//books.Max();
+//books.Count();
+//books.Sum(b => b.Price);
+//books.Average(b => b.Price);
 
-// used for paging
-books.Skip(3).Take(2);
+//// used for paging
+//books.Skip(3).Take(2);
+
+
+// Nullable type
+
+DateTime? date = null;
+
+Console.WriteLine(date.GetValueOrDefault());
+Console.WriteLine(date.HasValue);
+//Console.WriteLine(date.Value);
+
+
+//null coalescing operator
+DateTime date2 = date ?? DateTime.Today;
+
+Console.WriteLine(date2);
 
 
 
