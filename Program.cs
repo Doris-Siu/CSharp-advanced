@@ -89,6 +89,8 @@ finally
         streamReader.Dispose();
 }
 
+
+// using statement - automatically call the finally
 try
 {
     using (var streamReader1 = new StreamReader(@"c:\..."))
@@ -102,6 +104,19 @@ catch (Exception ex)
 {
     Console.WriteLine("An exception occured.");
 }
+
+
+// custom exception
+try
+{
+    var api = new YouTubeApi();
+    var videos = api.GetVideos("doris");
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
 
 
 
