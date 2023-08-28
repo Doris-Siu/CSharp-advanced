@@ -69,6 +69,20 @@ DateTime date2 = date ?? DateTime.Today;
 Console.WriteLine(date2);
 
 
+// Exception handling - try catch blocks
+try
+{
+    var calculator = new Calculator();
+    var result = calculator.Divide(5, 0);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("An unexpected error occured.");
+}
+
+
+
+
 
 
 
