@@ -70,15 +70,39 @@ Console.WriteLine(date2);
 
 
 // Exception handling - try catch blocks
+StreamReader streamReader = null;
 try
 {
-    var calculator = new Calculator();
-    var result = calculator.Divide(5, 0);
+    //var calculator = new Calculator();
+    //var result = calculator.Divide(5, 0);
+    streamReader = new StreamReader(@"c:\...");
+    var content = streamReader.ReadToEnd();
 }
 catch (Exception ex)
 {
     Console.WriteLine("An unexpected error occured.");
 }
+// finally block - manually calling Dispose()
+finally
+{
+    if (streamReader != null)
+        streamReader.Dispose();
+}
+
+try
+{
+    using (var streamReader1 = new StreamReader(@"c:\..."))
+    {
+        var content = streamReader1.ReadToEnd();
+
+    }
+
+}
+catch (Exception ex)
+{
+    Console.WriteLine("An exception occured.");
+}
+
 
 
 
